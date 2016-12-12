@@ -25,6 +25,7 @@ public class Application {
         final Map<String, String> params = new HashMap<String, String>();
         params.put("proxyTo", destUrl);
         params.put("prefix", "/proxy");
+        params.put("idleTimeout", "5000");
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(proxyServlet, "/proxy/*");
         servletRegistrationBean.setAsyncSupported(true);
         servletRegistrationBean.setName("proxyServlet");
